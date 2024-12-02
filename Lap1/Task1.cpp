@@ -10,35 +10,37 @@ class Complex
 public:
   Complex add(Complex c)
   {
-    this->real += c.real;
-    this->imagine += c.imagine;
-    return *this;
+    Complex newComplex;
+    newComplex.setReal(this->real + c.real);
+    newComplex.setImagine(this->imagine + c.imagine);
+    return newComplex;
   }
 
   Complex substract(Complex c)
   {
-    this->real -= c.real;
-    this->imagine -= c.imagine;
-    return *this;
+    Complex newComplex;
+    newComplex.setReal(this->real - c.real);
+    newComplex.setImagine(this->imagine - c.imagine);
+    return newComplex;
   }
 
   void display()
   {
-    if (this->real == 0)
-    {
-      cout << this->imagine << "Img" << endl;
-    }
-    else if (this->imagine == 0)
-    {
-      cout << this->real << "Real" << endl;
-    }
-    else if (this->real == 0 && this->imagine == 0)
+    if (this->real == 0 && this->imagine == 0)
     {
       cout << "No data to show it" << endl;
     }
+    else if (this->real == 0)
+    {
+      cout << this->imagine << " Img" << endl;
+    }
+    else if (this->imagine == 0)
+    {
+      cout << this->real << " Real" << endl;
+    }
     else
     {
-      cout << this->real << " Real " << " + " << this->imagine << " Img" << endl;
+      imagine < 0 ? cout << this->real << " Real" << " - " << this->imagine * -1 << " Img" << endl : cout << this->real << " Real" << " + " << this->imagine << " Img" << endl;
     }
   }
 
@@ -69,7 +71,7 @@ int main()
   complex1.setReal(15);
   complex1.setImagine(25);
   complex2.setReal(10);
-  complex2.setImagine(15);
+  complex2.setImagine(50);
 
   result = complex1.add(complex2);
   result.display();
