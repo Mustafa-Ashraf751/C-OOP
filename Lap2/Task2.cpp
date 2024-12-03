@@ -301,6 +301,7 @@ int main()
         catch (const exception &e)
         {
           cout << "Error with message: " << e.what() << endl;
+          sleep(2);
         }
       }
       else if (selectedOption == OPTIONTHREE)
