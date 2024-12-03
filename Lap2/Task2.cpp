@@ -122,7 +122,7 @@ public:
 
     if (top == -1)
     {
-      throw exception();
+      throw runtime_error("Stack is empty can't pop element");
     }
     else
     {
@@ -256,8 +256,9 @@ int main()
           }
           else
           {
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
             cout << "Please enter employee name: ";
-            cin >> name;
+            getline(cin, name);
             cout << "Please enter employee salary: ";
             cin >> netSalary;
             if (cin.fail())
