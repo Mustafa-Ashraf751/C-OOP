@@ -89,7 +89,7 @@ public:
   {
     int len1 = stringLen(str);
     int len2 = stringLen(str2);
-    char *newArr = new char[len1 + len2 + 1];
+    char *newArr = new char[len1 + len2];
     for (int i = 0; i < len1; i++)
     {
       newArr[i] = str[i];
